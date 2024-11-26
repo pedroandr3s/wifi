@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Audit Tool</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/no_fa.png') }}">
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    <!-- Estilo -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Título Principal -->
+    <h1>WiFi Audit Tool</h1>
+
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="/audit_panel">Audit Panel</a></li>
+            <li><a href="/monitor_mode">Monitor Mode</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Principal -->
+    <section>
+        <h2>Acciones</h2>
+
+        <!-- Selección de Interfaz -->
+        <label for="interface">Selecciona una interfaz:</label>
+        <select id="interface">
+            <option value="" disabled selected>Selecciona una interfaz</option>
+        </select>
+
+        <!-- Botones de Acción -->
+        <div class="actions">
+            <button id="scanNetworksButton">Escanear Redes</button>
+            <button id="deauthAttackButton">Ataque de Desautenticación</button>
+        </div>
+
+        <!-- Área de Resultados -->
+        <div id="result">
+            <p id="loadingMessage" style="display: none;">Cargando datos...</p>
+        </div>
+    </section>
+
+    <!-- Mensaje de Error Global -->
+    <footer>
+        <p id="errorMessage" class="error" style="display: none;"></p>
+    </footer>
+</body>
+</html>

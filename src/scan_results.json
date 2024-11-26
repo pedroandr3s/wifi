@@ -1,0 +1,58 @@
+[
+    {
+        "BSSID": "58:AF:F1:56:98:08",
+        "Channel": "2.412 GHz (Channel 1)",
+        "Quality": "53/70",
+        "Encryption": "on",
+        "SSID": "CANELITA"
+    },
+    {
+        "BSSID": "6C:D8:19:6D:FB:A8",
+        "Channel": "2.412 GHz (Channel 1)",
+        "Quality": "56/70",
+        "Encryption": "on",
+        "SSID": "Gretel"
+    },
+    {
+        "BSSID": "24:CF:24:28:54:33",
+        "Channel": "2.417 GHz (Channel 2)",
+        "Quality": "70/70",
+        "Encryption": "on",
+        "SSID": "VM"
+    },
+    {
+        "BSSID": "A0:08:6F:47:FD:1C",
+        "Channel": "2.417 GHz (Channel 2)",
+        "Quality": "45/70",
+        "Encryption": "on",
+        "SSID": "Freed Back"
+    },
+    {
+        "BSSID": "6C:D8:19:6D:19:C0",
+        "Channel": "2.432 GHz (Channel 5)",
+        "Quality": "49/70",
+        "Encryption": "on",
+        "SSID": "Sandro"
+    },
+    {
+        "BSSID": "6C:A4:D1:8C:46:38",
+        "Channel": "2.462 GHz (Channel 11)",
+        "Quality": "44/70",
+        "Encryption": "on",
+        "SSID": "Lucia Martinez"
+    },
+    {
+        "BSSID": "6C:D8:19:F7:A1:A8",
+        "Channel": "2.462 GHz (Channel 11)",
+        "Quality": "48/70",
+        "Encryption": "on",
+        "SSID": "Familia Mentiz"
+    },
+    {
+        "BSSID": "76:42:85:72:C7:DC",
+        "Channel": "2.462 GHz (Channel 11)",
+        "Quality": "43/70",
+        "Encryption": "on",
+        "SSID": "Yunhista "
+    }
+]

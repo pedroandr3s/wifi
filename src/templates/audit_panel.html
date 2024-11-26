@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Panel</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/no_fa.png') }}">
+    <!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/audit_panel.js') }}"></script>
+
+    <!-- Estilo -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Audit Panel</h1>
+    </header>
+
+    <main>
+        <!-- Escaneo de Redes -->
+        <section>
+            <h2>Escaneo de Redes WiFi</h2>
+            <label for="interface">Seleccionar Interfaz:</label>
+            <select id="interface">
+                <option value="" disabled selected>Selecciona una interfaz</option>
+            </select>
+            <div class="actions">
+                <button id="scanWifiButton">Escanear Redes WiFi</button>
+            </div>
+        </section>
+
+        <!-- Captura de Handshake -->
+        <section>
+            <h2>Captura de Handshake</h2>
+            <label for="bssid">BSSID:</label>
+            <input type="text" id="bssid" placeholder="Introduce el BSSID">
+            <label for="channel">Canal:</label>
+            <input type="text" id="channel" placeholder="Introduce el Canal">
+            <div class="actions">
+                <button id="captureHandshakeButton">Capturar Handshake</button>
+            </div>
+        </section>
+
+       <!-- Crackeo de Contraseña -->
+<section>
+    <h2>Crackeo de Contraseña</h2>
+
+    <!-- Botón para seleccionar el archivo .cap -->
+    <button id="selectCapFileButton">Seleccionar Archivo .cap</button>
+    <input type="file" id="capFile" accept=".cap" style="display: none;">
+    <span id="capFileName">Ningún archivo seleccionado</span>
+
+    <!-- Botón para seleccionar el archivo de diccionario -->
+    <button id="selectDictFileButton">Seleccionar Archivo de Diccionario</button>
+    <input type="file" id="dictFile" accept=".txt" style="display: none;">
+    <span id="dictFileName">Ningún archivo seleccionado</span>
+
+    <div class="actions">
+        <button id="crackPasswordButton">Crackear Contraseña</button>
+    </div>
+</section>
+
+
+        <!-- Resultados -->
+        <section>
+            <h2>Resultados</h2>
+            <div id="result" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; 
+                                    max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>WiFi Audit Tool - Herramienta de Auditoría</p>
+    </footer>
+
+    <script>
+        // Función para dividir el texto cada 90 caracteres
+        function formatResults(text) {
+            const maxLineLength = 90;
+            let formattedText = '';
+            for (let i = 0; i < text.length; i += maxLineLength) {
+                formattedText += text.slice(i, i + maxLineLength) + '\n';
+            }
+            return formattedText;
+        }
+
+        // Función para extraer solo el texto que sigue a "KEY FOUND!" dentro de corchetes []
+        function extractKeyFound(text) {
+            const regex = /KEY FOUND! \[ "(.*?)" \]/;
+            const match = text.match(regex);
+            if (match && match[1]) {
+                return match[1];  // Devuelve el contenido entre las comillas
+            }
+            return text;  // Si no se encuentra la frase, devuelve el texto original
+        }
+
+        // Actualiza los resultados y muestra solo lo relevante
+        function updateResults(message) {
+            const resultDiv = document.getElementById('result');
+            const extractedText = extractKeyFound(message);
+            resultDiv.textContent = formatResults(extractedText);
+        }
+
+        // Llamada de prueba para simular la actualización de resultados
+        // Aquí puedes reemplazar "message" con los datos que recibas desde tu servidor
+        const message = "Este es un ejemplo de un texto largo que debería ser dividido en saltos de línea cada 90 caracteres. KEY FOUND! [ \"Este es el contenido que queremos mostrar\"] y este es el resto del texto.";
+        updateResults(message);
+    </script>
+</body>
+</html>

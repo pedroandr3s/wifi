@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Mode</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/no_fa.png') }}">
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/monitor_mode.js') }}" defer></script>
+    <!-- Estilo -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Monitor Mode</h1>
+    </header>
+
+    <main>
+        <!-- Configuración de Modo Monitor -->
+        <section>
+            <h2>Configurar Modo Monitor</h2>
+            <label for="monitorInterface">Seleccionar Interfaz:</label>
+            <select id="monitorInterface" aria-label="Seleccionar interfaz para modo monitor">
+                <option value="" disabled selected>Selecciona una interfaz</option>
+            </select>
+            <div class="actions">
+                <button id="startMonitorButton" aria-label="Iniciar modo monitor">Iniciar Modo Monitor</button>
+                <button id="stopMonitorButton" aria-label="Detener modo monitor">Detener Modo Monitor</button>
+                <button id="resetInterfaceButton" aria-label="Restaurar configuración de interfaz">Restaurar Interfaz</button>
+            </div>
+        </section>
+
+        <!-- Mensajes y Resultados -->
+        <section class="results-section">
+            <h3>Resultados</h3>
+            <div id="monitorResult" class="results-container"></div>
+            <div id="monitorMessages" class="message-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WiFi Audit Tool</p>
+    </footer>
+</body>
+</html>
