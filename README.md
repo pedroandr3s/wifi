@@ -3,37 +3,36 @@
 Esta es una herramienta de auditoría WiFi basada en Flask que interactúa con herramientas como `aircrack-ng` para realizar auditorías de redes WiFi.
 
 ## Estructura del Proyecto
-wifi_audit/
-│
-├── src/
-│   ├── app.py
-│   ├── routes.py
-│   ├── services.py
-│   ├── utils.py
-│   ├── templates/
-│   │   ├── index.html
-│   │   ├── audit_panel.html
-│   │   └── monitor_mode.html
-│   ├── static/
-│   │   ├── js/
-│   │   │   └── scripts.js
-│   │   ├── css/
-│   │   │   └── styles.css
-│   │   └── images/
-│   │       └── logo.png
-│   └── logs/
-│       └── audit_logs.log
-├── README.md
-├── requirements.txt
-├── .gitignore
-└── venv/  # Entorno virtual (si necesario, fuera de src)
 
+wifi_audit/
+- src/
+  - app.py
+  - routes.py
+  - services.py
+  - utils.py
+  - templates/
+    - index.html
+    - audit_panel.html
+    - monitor_mode.html
+  - static/
+    - js/
+      - scripts.js
+    - css/
+      - styles.css
+    - images/
+      - logo.png
+  - logs/
+    - audit_logs.log
+- README.md
+- requirements.txt
+- .gitignore
+- venv/  # Entorno virtual (si necesario, fuera de src)
 
 ## Instalación
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu_usuario/wifi_audit.git
+    git clone https://github.com/pedroandr3s/wifi_audit.git
     cd wifi_audit
     ```
 
